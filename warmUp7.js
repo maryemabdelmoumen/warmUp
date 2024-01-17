@@ -7,7 +7,13 @@
  * @return {Array}
  */
 
-
+function objKey(obj) {
+    const keysArray = []
+    for (let key in obj) {
+        keysArray.push(key)
+    }
+    return keysArray
+}
 
 
 /**
@@ -19,6 +25,13 @@
  * @return {number}
  */
 
+function objLength(obj) {
+    var  count = 0
+    for (var key in obj) {
+        count++
+    }
+    return count
+}
 
 
 /**
@@ -29,3 +42,26 @@
  * @param {Array<{id: number, value: number}>} obj
  * @return {Array}
  */
+
+function objSort(objArray) {
+    for (var i = 0; i < objArray.length - 1; i++) {
+        for (var j = 0; j < objArray.length - 1 - i; j++) {
+            if (objArray[j].id > objArray[j + 1].id) {
+                var  temp = objArray[j]
+                objArray[j] = objArray[j + 1]
+                objArray[j + 1] = temp
+            }
+        }
+    }
+
+    return objArray
+} 
+
+var  arr  = [
+    { id: 2, value: 50 },
+    { id: 0, value: 70 },
+    { id: 1, value: 40 }
+] 
+
+
+var sortedArray = objSort(arr)
