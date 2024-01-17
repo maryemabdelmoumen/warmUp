@@ -9,8 +9,15 @@
  * @param {Array<any>} array
  * @return {any}
  */
+var females = ['maryem','linda','oumayma']
+var males = ['salim','yassine','wassim']
+var instructors = ['rafik','yassine','doctor','sara']
 function midElement(array) {
-
+    if (array.length === 0) {
+        return null
+    }
+    var middleIndex = Math.floor(array.length / 2)
+    return array[middleIndex]
 }
 
 
@@ -22,5 +29,13 @@ function midElement(array) {
  * @return {Array<number>}
  */
 function multipleEvenIndexes(array) {
-
+    const resultArray = []
+    for (var i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            resultArray.push(array[i] * 2)
+        } else {
+            resultArray.push(array[i])
+        }
+    }
+    return resultArray
 }
