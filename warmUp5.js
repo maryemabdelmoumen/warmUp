@@ -6,7 +6,16 @@
  * @param {Array<number>} array
  * @return {Array<number>}
  */
-
+function reverseArray(array) {
+    // Create a new array to store the reversed elements
+    const reversedArray = []
+    // Iterate over the input array in reverse order and push elements to the new array
+    for (var i = array.length - 1; i >= 0; i--) {
+      reversedArray.push(array[i])
+    }
+  
+    return reversedArray
+  }
 
 /**
  * 2 Write a function called laugh() that takes one parameter,
@@ -18,6 +27,13 @@
  * @return {string}
  */
 
+function laugh(num) {
+    var result = ""
+    for (var i = 0; i < num; i++) {
+        result += "ha"
+    }
+    return result
+}
 
 
 /**
@@ -35,4 +51,13 @@
 
 var findAll = function (array, n) {
     // your code here
-};
+        var result = []
+        for (var i = 0; i < array.length; i++) {
+          if (array[i] === n) {
+            result.push(i)
+          }
+        }
+      
+        return result
+      }
+      

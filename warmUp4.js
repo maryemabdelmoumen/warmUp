@@ -51,14 +51,14 @@ function counting(n) {
 function meetNGreet(n) {
     for (var i = 1; i <= n; i++) {
       var welcome= 'welcome ' + i;
-      let meetMsg = ''
+      var meet = ''
       
       if (i > 1) {
         meet = ', meet '
         for (var j = 1; j < i; j++) {
           meet += j
           if (j < i - 1) {
-            meetMsg += ' and '
+            meet += ' and '
           }
         }
       }
