@@ -9,8 +9,17 @@
  * @param {number} num2
  * @return {boolean|number}
  */
-function greatestCommonDivisor(num1, num2){
-
+function greatestCommonDivisor(num1, num2) {
+    // Base case: Check if either num1 or num2 is not a number
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+        return false
+    }
+    // Base case: Check if num2 is 0, then num1 is the gcd
+    if (num2 === 0) {
+        return num1
+    }
+    // Recursive case: Call the function with num2 and num1 % num2
+    return greatestCommonDivisor(num2, num1 % num2)
 }
 
 // **************** git status ****************
@@ -32,9 +41,13 @@ function greatestCommonDivisor(num1, num2){
  * @param {number} y
  * @return {number}
  */
-function sum(x,y){
-
-
+function sum(x, y) {
+    // Base case: Check if the second number is 0
+    if (y === 0) {
+        return x
+    }
+    // Recursive case: Call the function with incremented x and decremented y
+    return sum(x + 1, y - 1)
 }
 
 // **************** git status ****************
