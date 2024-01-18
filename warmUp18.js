@@ -35,5 +35,11 @@
  * @return {boolean}
  */
 function cyclops(n) {
-    // your code here
+    var binaryString = n.toString(2)
+    if (binaryString.length % 2 !== 1) {
+        return false
+    }
+    //  here im gonna Check if there is exactly one zero in the middle
+    var middleIndex = Math.floor(binaryString.length / 2)
+    return binaryString[middleIndex] === '0' && binaryString.indexOf('0', middleIndex + 1) === -1
 }
