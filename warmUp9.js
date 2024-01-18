@@ -6,8 +6,15 @@
  * @param {string} str
  * @return {string}
  */
-function reverseStr(str){
+function reverseStr(str) {
+    var reversedString = ''
+    var index = 0
+    while (index < str.length) {
+        reversedString = str[index] + index + reversedString
+        index++
+    }
 
+    return reversedString
 }
 
 
@@ -19,5 +26,15 @@ function reverseStr(str){
  * @return {Array<string>}
  */
 function sameLength(array) {
-
+    var  resultArr = []
+    if (array.length < 2) {
+        return resultArr
+    }
+    const referenceLength = array[0].length
+    for (var i = 1; i < array.length; i++) {
+        if (array[i].length === referenceLength) {
+            resultArr.push(array[i])
+        }
+    }
+    return resultArr
 }
