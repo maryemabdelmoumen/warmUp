@@ -38,5 +38,24 @@
  * @return {boolean}
  */
 function comp(array1, array2) {
-    //your code here
+    if (array1 === null || array2 === null) {
+        return false
+    }
+    if (array1.length === 0 || array2.length === 0) {
+        return array1.length === 0 && array2.length === 0
+    }
+    array1.sort(function (a, b) {
+        return a - b
+    })
+
+    array2.sort(function (a, b) {
+        return a - b
+    })
+    for (var i = 0; i < array1.length; i++) {
+        if (array1[i] * array1[i] !== array2[i]) {
+            return false
+        }
+    }
+
+    return true
 }
