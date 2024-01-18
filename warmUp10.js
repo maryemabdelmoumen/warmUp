@@ -9,5 +9,36 @@
  * @return {number}
  */
 function dominator(arr) {
-    // code me
+    if (arr.length === 0) {
+        return -1
+    }
+    var candidate = arr[0]
+    var  count = 1
+    for (var i = 1; i < arr.length; i++) {
+        if (count === 0) {
+            candidate = arr[i]
+            count = 1
+        } else {
+            if (candidate === arr[i]) {
+                count++
+            } else {
+                count--
+            }
+        }
+    }
+
+    // Count the occurrences of the candidate
+    count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === candidate) {
+            count++;
+        }
+    }
+
+    // Check if the candidate is a dominator
+    if (count > arr.length / 2) {
+        return candidate;
+    } else {
+        return -1;
+    }
 }
