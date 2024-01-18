@@ -39,8 +39,14 @@
  * @param {object} object
  * @return {object}
  */
-function agesToMinutes(object){
-
+function agesToMinutes(people) {
+    return map(people, function(person) {
+        var ageInMinutes = person.age * 365 * 24 * 60
+        return {
+            name: person.name,
+            age: ageInMinutes
+        }
+    })
 }
 
 // EXTRA Credit: one of the most important notes in coding is that, ( inputs to function should not be modified ) for example
