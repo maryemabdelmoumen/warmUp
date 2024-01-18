@@ -9,5 +9,19 @@
  * @return {string[]}
  */
 function capitalize(str) {
-
+    if (str.length === 0) {
+        return ['', '']
+    }
+    var even = ''
+    let odd = ''
+    for (var i = 0; i < str.length; i++) {
+        if (i % 2 === 0) {
+            even += str[i].toUpperCase()
+            odd += str[i]
+        } else {
+            odd += str[i].toUpperCase()
+            even+= str[i]
+        }
+    }
+    return [even, odd]
 }
